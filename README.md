@@ -8,11 +8,11 @@ pip3 install twilio
 Fill the variable.env with all the neassary information. When done type source ./variable.env
 
 Or just run this command in the terminal
-    export TWILIO_ACCOUNT_SID=''
-    export TWILIO_AUTH_TOKEN=''
-    export API_KEY=''
-    export MYPHONENUMBER=''
-    export TWILIO_PHONENUMBER=''
+* export TWILIO_ACCOUNT_SID=''
+* export TWILIO_AUTH_TOKEN=''
+* export API_KEY=''
+* export MYPHONENUMBER=''
+* export TWILIO_PHONENUMBER=''
 
 Then you need to go in to twithc-live-sms.py and change channel variable to the channelname you want a notification for. 
 
