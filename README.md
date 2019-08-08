@@ -1,10 +1,10 @@
-#Prerequisite
+# Prerequisite
 You need Twitchclient and twilio
-##Installation instruction with pip
+## Installation instruction with pip
 pip3 install python-twitch-client
 pip3 install twilio
 
-#Running the Program
+# Running the Program
 Fill the variable.env with all the neassary information. When done type source ./variable.env
 
 Or just run this command in the terminal
@@ -19,7 +19,7 @@ Then you need to go in to twithc-live-sms.py and change channel variable to the 
 Then just do python3 twitch-live.sms.py
 
 
-#Todo 
+# Todo 
 - [ ] Channel Selection on command line
 - [ ] Bugfixing?
 
