@@ -6,7 +6,7 @@ import datetime
 
 
 #Variables
-channel= "twithcchannel"
+channel= "twitchchannel"
 api_key= os.environ['API_KEY']  #It getting the API_KEY from OS so make sure to do export API_KEY='XXXXXXXXXXXXXXXXXXXXX'
 livestatus=0            #This make sure we do not spam SMS to the Reciver
 t0=0                 #This is used to calculate the live time for the streamer
@@ -32,10 +32,10 @@ def live(twitchclient,channelid,smsclient, phonenumber,channel):
         elif(livestatus==1):
             print("OFFLINE: SENDING SMS")
             t1=time.time()
-            totaltime = datetime.timedelta(t1-t0)
-            hours = totaltime.seconds//3600
-            minutes = (totaltime.seconds%3600)//60
-            seconds = (totaltime.seconds%60)
+            totaltime = t1-t0
+            hours = int(totaltime/3600)
+            minutes = int((totaltime%3600)/60)
+            seconds = int((totaltime%60))
             livestatus=0
             sms(smsclient, phonenumber,"Now "+channel+" is OFFLINE Was live for "+str(hours)+"h "+str(minutes)+"m "+str(seconds)+"s")
             time.sleep(30) #This sleep is for the bug that the seems to go live and offline. For some seconds
@@ -52,7 +52,7 @@ def live(twitchclient,channelid,smsclient, phonenumber,channel):
             sms(smsclient, phonenumber,"Now is the "+channel+" LIVE! Go and watch at https://twitch.tv/"+channel)
 
 def sms(smsclient,phonenumber,msg):
-    message = smsclient.messages \
+    smsclient.messages \
                 .create(
                      body=msg,
                      from_=os.environ['TWILIO_PHONENUMBER'],
