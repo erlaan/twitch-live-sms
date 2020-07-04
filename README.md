@@ -22,4 +22,5 @@ Then just do python3 twitch-live.sms.py
 # Todo 
 - [ ] Channel Selection on command line
 - [ ] Bugfixing?
+- [ ] Fix bug that it disconnect random. 
 

@@ -61,5 +61,7 @@ def sms(smsclient,phonenumber,msg):
 
 
 while True:
-    live(twitchclient,getid(twitchclient,channel),smsclient,phonenumber,channel)
-    #live(twitchclient,getid(twitchclient,"instagibbed_lan"),smsclient,phonenumber,"instagibbed_lan")
+    try:
+        live(twitchclient,getid(twitchclient,channel),smsclient,phonenumber,channel)
+    except:
+        continue
