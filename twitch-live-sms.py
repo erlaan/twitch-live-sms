@@ -27,7 +27,7 @@ def live(twitchclient,channelid,smsclient, phonenumber,channel):
     live=twitchclient.streams.get_stream_by_user(channelid)
     if(live==None):
         if(livestatus==0):
-            print("offline")
+            print(channel+" is offline")
             livestatus=0
         elif(livestatus==1):
             print("OFFLINE: SENDING SMS")
@@ -46,7 +46,7 @@ def live(twitchclient,channelid,smsclient, phonenumber,channel):
         elif(live_broadcast=="rerun"):
             print("it'is a rerun do nothig")
         elif(live_broadcast=="live"):
-            print("LIVE: Sending SMS")
+            print(channel+" is LIVE: Sending SMS")
             t0=time.time()
             livestatus=1
             sms(smsclient, phonenumber,"Now is the "+channel+" LIVE! Go and watch at https://twitch.tv/"+channel)
@@ -63,5 +63,7 @@ def sms(smsclient,phonenumber,msg):
 while True:
     try:
         live(twitchclient,getid(twitchclient,channel),smsclient,phonenumber,channel)
+    except KeyboardInterrupt:
+        break
     except:
         continue
