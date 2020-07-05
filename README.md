@@ -23,4 +23,5 @@ Then just do python3 twitch-live.sms.py
 - [ ] Channel Selection on command line
 - [ ] Bugfixing?
 - [ ] Fix bug that it disconnect random. 
+- [X] Need to fix so you can watch more then 1 streamer.
 
