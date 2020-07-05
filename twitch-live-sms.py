@@ -3,15 +3,22 @@ from twilio.rest import Client
 import os
 import time
 import datetime
+import sys
 
 
 #Variables
-channels= ["twitchchannel","twitchchannel2"]
+channels=["twitchchannel","twitchchannel2"]
 api_key= os.environ['API_KEY']  #It getting the API_KEY from OS so make sure to do export API_KEY='XXXXXXXXXXXXXXXXXXXXX'
 livestatus={}            #This make sure we do not spam SMS to the Reciver
 t0={}                 #This is used to calculate the live time for the streamer
 smsclient = Client(os.environ['TWILIO_ACCOUNT_SID'],os.environ['TWILIO_AUTH_TOKEN']) #It getting the SID and Token from OS so make sure to run export TWILIO_ACCOUNT_SID='XXXXXXXXXXXXXXXXXXXXX' and export TWILIO_AUTH_TOKEN='XXXXXXXXXXXXXXXXXXXXX'
 phonenumber= os.environ['MYPHONENUMBER'] #Do export MYPHONENUMBER="+46XXXXXXXXX"
+print(sys.argv)
+try:    # This will test if the user have input a file as a argument other wise it will go for the channels defiend above.
+    with open(sys.argv[1]) as f:
+        channels=f.read().splitlines()
+except IndexError:
+    pass  #No files defiend as a sys.argv going with the channels
 
 for channel in channels:
     livestatus[channel]=0

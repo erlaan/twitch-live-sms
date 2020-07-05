@@ -17,6 +17,7 @@ Or just run this command in the terminal
 Then you need to go in to twithc-live-sms.py and change channel variable to the channelname you want a notification for. 
 
 Then just do python3 twitch-live.sms.py
+Or if you have a text file with all the channel you want to get a notification for type python3 twitch-live.sms.py filepath
 
 
 # Todo 
@@ -24,4 +25,4 @@ Then just do python3 twitch-live.sms.py
 - [ ] Bugfixing?
 - [ ] Fix bug that it disconnect random. 
 - [X] Need to fix so you can watch more then 1 streamer.
-- [ ] Add so you can load streamers from a file!
+- [X] Add so you can load streamers from a file!
