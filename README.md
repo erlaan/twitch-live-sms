@@ -24,4 +24,4 @@ Then just do python3 twitch-live.sms.py
 - [ ] Bugfixing?
 - [ ] Fix bug that it disconnect random. 
 - [X] Need to fix so you can watch more then 1 streamer.
-
+- [ ] Add so you can load streamers from a file!
