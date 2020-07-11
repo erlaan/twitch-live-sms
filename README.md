@@ -23,6 +23,6 @@ Or if you have a text file with all the channel you want to get a notification f
 # Todo 
 - [ ] Channel Selection on command line
 - [ ] Bugfixing?
-- [ ] Fix bug that it disconnect random. 
+- [X] Fix bug that it disconnect random. 
 - [X] Need to fix so you can watch more then 1 streamer.
 - [X] Add so you can load streamers from a file!
